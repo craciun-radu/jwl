@@ -1,0 +1,31 @@
+= form_for(@jewel, html: {multipart: true}) do |f|
+  .row
+    .col-xs-0.col-sm-1.col-md-3.col-lg-3
+    .col-xs-12.col-sm-10.col-md-6.col-lg-6
+      = f.text_field :name, class: "form-control", placeholder: translate("jewels.name")
+      
+  .row
+    .col-xs-0.col-sm-1.col-md-3.col-lg-3
+    .col-xs-12.col-sm-10.col-md-6.col-lg-6
+      = f.select :category_id, @categories, {}, {class: "form-control form-select", placeholder: translate("jewels.category")}
+      
+  .row
+    .col-xs-0.col-sm-1.col-md-3.col-lg-3
+    .col-xs-12.col-sm-10.col-md-6.col-lg-6
+      = f.number_field :price, step: 0.01, class: "form-control", placeholder: translate("jewels.price")
+      
+  .row
+    .col-xs-0.col-sm-1.col-md-3.col-lg-3
+    .col-xs-12.col-sm-10.col-md-6.col-lg-6
+      = f.text_field :description, class: "form-control", placeholder: translate("jewels.description")
+      
+  .row
+    .col-xs-0.col-sm-1.col-md-3.col-lg-3
+    .col-xs-12.col-sm-10.col-md-6.col-lg-6
+      = f.file_field :image
+      
+  .row
+    .col-xs-0.col-sm-1.col-md-3.col-lg-3
+    .col-xs-12.col-sm-10.col-md-6.col-lg-6
+      - button = @jewel.persisted? ? "Update" : "Save"
+      = f.submit button, class: "btn btn-info"

@@ -1,0 +1,11 @@
+.popover-modal#carts-popover
+  .col-xs-12.col-sm-12.col-md-12.col-lg-12.content
+    .title.margin-bottom-25
+      %h3
+        %span
+          = translate("shopping_cart.title")
+    .content-form
+      - if current_user.blank?
+        %h4 You have to Sign In before viewing your cart.
+      - else
+        = render "cart_orders/list_of_jewels"

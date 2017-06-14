@@ -1,0 +1,6 @@
+- if @quantity_only
+  $(".jewel-in-cart-#{@jewel.id} .quantity-container").empty()
+  $(".jewel-in-cart-#{@jewel.id} .quantity-container").html("#{@in_cart.quantity}")
+- else
+  var new_cart_item = $("#{escape_javascript(render(partial: "cart_orders/jewel_in_cart", locals: {jewel: @jewel_in_cart_order, jewel_id: @jewel.id}))}");
+  $("#list-of-jewels-in-cart-order").append(new_cart_item)

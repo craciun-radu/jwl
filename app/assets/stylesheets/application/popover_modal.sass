@@ -1,0 +1,42 @@
+.popover-modal
+  background-color: white
+  display: block
+  position: fixed
+  bottom: 0%
+  width: 0
+  top: 80px
+  right: 0%
+  z-index: 10001
+  height: 100%
+  overflow-x: hidden
+  overflow-y: scroll
+  @include rounded-corners(0)
+  border: none
+  .content
+    padding: 25px 25px
+
+  .title
+    font-size: 30px
+  .content-form
+    .actions
+      text-align: center
+      
+  .sign-in-button
+    padding: 10px 25px
+  
+  .links_to_actions
+    a
+      color: $light-blue
+      text-decoration: underline
+  
+  .colored_user_name
+    color: $user-color
+  
+  .update_messages_container
+    h4
+      font-size: 13px
+    h4.success
+      color: $user-color
+    
+    h4.error
+      color: $red

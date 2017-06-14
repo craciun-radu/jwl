@@ -1,0 +1,6 @@
+$("#edit-account-popover .update_messages_container h4").removeClass("success");
+$("#edit-account-popover .update_messages_container h4").removeClass("error");
+$("#edit-account-popover .update_messages_container h4").addClass("#{@notice['type']}");
+$("#edit-account-popover .update_messages_container").removeClass("hide");
+$("#edit-account-popover .update_messages_container h4").empty();
+$("#edit-account-popover .update_messages_container h4").text("#{@notice['message']}");

@@ -1,0 +1,17 @@
+.i18n-container
+  - if current_language == "ro"
+    = link_to "/en" do
+      = image_tag "english_flag.png", class: "i18n-flag"
+  - else
+    = link_to "/ro" do
+      = image_tag "romanian_flag.jpeg", class: "i18n-flag"
+
+= link_to "#", class: "btn btn-default account-button full-sized-button with_action no-left-border col-xs-12 col-sm-12 col-md-4 col-lg-4", id: "account-button", data: {popover_target: account_target_class()} do
+  %span.glyphicon.glyphicon-user
+  %span.glyphicon.glyphicon-remove.hide
+= link_to "#", class: "btn btn-default favourites-button full-sized-button with_action col-xs-12 col-sm-12 col-md-4 col-lg-4", id: "favourites-button", data: {popover_target: favourites_target_class()} do
+  %span.glyphicon.glyphicon-star
+  %span.glyphicon.glyphicon-remove.hide
+= link_to "#", class: "btn btn-default cart-button full-sized-button with_action more-right-border col-xs-12 col-sm-12 col-md-4 col-lg-4", id: "cart-button", data: {popover_target: carts_target_class()} do
+  %span.glyphicon.glyphicon-shopping-cart
+  %span.glyphicon.glyphicon-remove.hide

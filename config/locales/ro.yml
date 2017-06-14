@@ -1,0 +1,51 @@
+ro:
+  hello: "Bine ati venit!"
+  confirmation: "Sunteti sigur?"
+  
+  jewels:
+    add_new: "Adaugati bijuterii"
+    name: "Numele Bijuteriei"
+    category: "Categorie"
+    price: "Pret"
+    description: "Descriere"
+
+  account:
+    my_account: "Contul meu"
+    
+  user:
+    sign_up: "Creeaza cont"
+    sign_in: "Autentificare"
+    sign_up_here: "Inregistreaza-te aici"
+    sign_in_here: "Autentifica-te aici"
+    account: "Contul meu"
+    email: "Email"
+    password: "Parola"
+    not_signed_in_messsage: "Nu esti autentificat"
+    sign_up_message: "Inregistreaza-te gratuit"
+    password_confirmation: "Repeta parola"
+    already_have_account_message: "Deja ai un cont? Atunci "
+    create_new_account_message: "Inca nu ai cont?"
+    welcome_message: "Salut, "
+    first_name: "Prenume"
+    last_name: "Nume"
+    sign_out_here: "Iesi din cont aici"
+    sign_out_message: "Gata cumparaturile? "
+    current_password: "Parola curenta"
+    update_account: "Salveaza"
+    edit_account_message: "Editeaza-ti contul"
+    success_update: "Datele au fost modificate cu succes."
+    failure_update: "Datele introduse sunt invalide. Incearca din nou."
+    
+  header:
+    home: "Acasa"
+
+  shopping_cart:
+    title: "Cos de cumparaturi"
+  
+  favourites_list:
+    title: "Favorite"
+    
+  categories:
+    name: "Numele Categoriei"
+    jewels_number: "Nr. bijuterii"
+    actions: "Actiuni"

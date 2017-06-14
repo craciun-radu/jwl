@@ -1,0 +1,13 @@
+- if current_user.present?
+  - if current_user.owner?
+    = link_to new_category_path(), class: "btn btn-default add-jwl-button more-left-border full-sized-button col-xs-12 col-sm-12 col-md-4 col-lg-4" do
+      %i.fa.fa-podcast
+
+    = link_to new_jewel_path(), class: "btn btn-default add-category-button full-sized-button col-xs-12 col-sm-12 col-md-4 col-lg-4" do
+      %i.fa.fa-diamond
+  - else
+    = link_to cart_orders_path(), class: "btn btn-default more-left-border full-sized-button col-xs-12 col-sm-12 col-md-4 col-lg-4" do
+      %i.fa.fa-list-alt
+
+    -# = link_to new_jewel_path(), class: "btn btn-default full-sized-button col-xs-12 col-sm-12 col-md-4 col-lg-4" do
+    -#   %i.fa.fa-diamond

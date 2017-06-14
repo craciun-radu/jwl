@@ -1,0 +1,26 @@
+.col-xs-12.col-sm-6.col-md-4.col-lg-3.jewel-container{class: "jewel-container-#{jewel.id}"}
+  .jewel
+    .jw-image.img-responsive{style: "background-image: url('#{jewel.image_url}');"}
+    %span
+      .jw-name
+        = jewel.name
+    %span
+      .jw-category
+        = jewel.category_name
+    .jw.actions
+      - if current_user.present?
+        - if current_user.owner?
+          %span
+            = link_to jewel_path(jewel.id), method: :delete, data: {confirm: translate("confirmation")} do
+              %i.fa.fa-trash
+          %span
+            = link_to edit_jewel_path(jewel.id) do
+              %i.fa.fa-pencil
+        - else
+          %span.add_to_favourites
+            = link_to add_jewel_to_cart_favourite_path(cart_favourite_id: @cart_favourite.id, jewel_id: jewel.id), remote: true do
+              %i.fa.fa-star
+              
+          %span.add_to_cart_order
+            = link_to add_jewel_to_cart_order_path(cart_order_id: @cart_order.id, jewel_id: jewel.id), remote: true do
+              %i.fa.fa-shopping-basket

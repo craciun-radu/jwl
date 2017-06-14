@@ -1,0 +1,25 @@
+.popover-modal#sign-in-popover
+  .col-xs-12.col-sm-12.col-md-12.col-lg-12.content
+    .title.margin-bottom-25
+      %h3
+        = translate("user.not_signed_in_messsage")
+      
+    .content-form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding
+          .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
+            = f.email_field :email, autocomplete: "off", placeholder: translate("user.email"), class: "form-control"
+            
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding
+          .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
+            = f.password_field :password, autocomplete: "off", placeholder: translate("user.password"), class: "form-control"
+        
+        .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding.margin-bottom-25
+          .actions.pull-right
+            = f.submit translate("user.sign_in").upcase(), class: "btn btn-info sign-in-button"
+
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding.links_to_actions
+        %span= translate("user.create_new_account_message")
+        %span
+          = link_to "#", class: "full-sized-button with_action only-javascript skip-removing-classes", data: {popover_target: "sign-up-popover"}, remote: true do
+            = translate("user.sign_up_here")

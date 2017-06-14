@@ -1,0 +1,40 @@
+.popover-modal#edit-account-popover
+  .col-xs-12.col-sm-12.col-md-12.col-lg-12.content
+    .title.margin-bottom-25
+      %h3
+        %span
+          = translate("user.welcome_message")
+        %span.colored_user_name
+          = current_user.pretty_name()
+    .content-form
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding.margin-bottom-25
+        %h4= translate("user.edit_account_message")
+        
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding.margin-bottom-25.update_messages_container.hide
+        %h4
+        
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, remote: true) do |f|
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding
+          .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
+            = f.email_field :email, autocomplete: "off", placeholder: translate("user.email"), class: "form-control"
+            
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding
+          .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
+            = f.password_field :password, autocomplete: "off", placeholder: translate("user.password"), class: "form-control"
+        
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding
+          .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
+            = f.password_field :password_confirmation, autocomplete: "off", placeholder: translate("user.password_confirmation"), class: "form-control"
+
+        -# .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding
+        -#   .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
+        -#     = f.password_field :current_password, autocomplete: "off", placeholder: translate("user.current_password"), class: "form-control"
+
+        .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding.margin-bottom-25
+          .actions.pull-right
+            = f.submit translate("user.update_account").upcase(), class: "btn btn-info sign-in-button"
+
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding.links_to_actions
+        %span= translate("user.sign_out_message")
+        %span
+          = link_to translate("user.sign_out_here"), destroy_user_session_path(), method: :delete

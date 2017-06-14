@@ -1,0 +1,37 @@
+.popover-modal#sign-up-popover
+  .col-xs-12.col-sm-12.col-md-12.col-lg-12.content
+    .title.margin-bottom-25
+      %h3
+        = translate("user.sign_up_message")
+      
+    .content-form
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding
+          .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
+            = f.text_field :first_name, autocomplete: "off", placeholder: translate("user.first_name"), class: "form-control"
+
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding
+          .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
+            = f.text_field :last_name, autocomplete: "off", placeholder: translate("user.first_name"), class: "form-control"
+
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding
+          .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
+            = f.email_field :email, autocomplete: "off", placeholder: translate("user.email"), class: "form-control"
+            
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding
+          .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
+            = f.password_field :password, autocomplete: "off", placeholder: translate("user.password"), class: "form-control"
+        
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding
+          .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
+            = f.password_field :password_confirmation, autocomplete: "off", placeholder: translate("user.password_confirmation"), class: "form-control"
+
+        .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding.margin-bottom-25
+          .actions.pull-right
+            = f.submit translate("user.sign_up").upcase(), class: "btn btn-info sign-in-button"
+
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding.links_to_actions
+        %span= translate("user.already_have_account_message")
+        %span
+          = link_to "#", class: "full-sized-button only-javascript with_action skip-removing-classes", data: {popover_target: "sign-in-popover"}, remote: true do
+            = translate("user.sign_in_here")

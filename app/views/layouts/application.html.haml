@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %title Jewels
+    %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :integrity => "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", :rel => "stylesheet"}/
+
+    %script{:crossorigin => "anonymous", :integrity => "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+    %meta{content: "Food Recipes", name: "description"}
+    -# = include_gon
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'favicon.ico'
+  %body{class: [controller_name, action_name]}
+    = render "shared/header"
+    #main-content
+      .col-xs-1.col-sm-1.col-md-2.col-lg-2
+      .col-xs-10.col-sm-10.col-md-8.col-lg-8
+        = yield
+      .col-xs-1.col-sm-1.col-md-2.col-lg-2
+    
+    .popover-modals-container
+      - ["sign_in_popover", "sign_up_popover", "edit_account_popover", "favourites_popover", "carts_popover"].each do |popover|
+        - next if popover == "edit_account_popover" && current_user.blank?
+        = render "shared/popovers/#{popover}"
+    :javascript
+      window.jwl.shared.init_popovers();

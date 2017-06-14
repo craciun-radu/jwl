@@ -1,0 +1,100 @@
+body
+  color: $dark-grey !important
+  width: 100%
+  height: 100%
+  background-color: $light-grey
+  font-family: 'El Messiri', sans-serif
+
+#main-content
+  padding-top: 200px
+  
+// Header styling
+#top-header
+  background-color: white
+  min-height: 80px
+  border-bottom: 4px solid $blue
+  .center-options
+    text-align: center
+    height: 80px
+  .logo
+    img
+      width: 120px
+      border-bottom: 4px solid $blue
+      @include rounded-corners(50%)
+      &:hover
+        border-bottom-color: $user-color
+  .logo-container
+    z-index: 99999999999
+  .full-sized-button:not(.only-javascript)
+    height: 80px
+    border: none
+    line-height: 76px
+    font-size: 20px
+    vertical-allign: middle
+    padding: 0px
+    background-color: $light-grey
+    color: $dark-grey
+    text-align: center
+    border-left: 4px solid white
+    border-right: 4px solid white
+    @include rounded-corners(0)
+    &:hover
+      color: $lighter-grey
+      text-decoration: none
+  
+  .account-button
+    
+  @media (min-width: 990px)
+    .full-sized-button.more-right-border
+      border-right: 8px solid white
+      
+    .full-sized-button.more-left-border
+      border-left: 8px solid white
+    
+    .full-sized-button.no-left-border
+      border-left: 0
+      
+    .full-sized-button.no-right-border
+      border-right: 0
+.white-background
+  background-color: white !important
+  
+.no-padding
+  padding: 0
+
+.left-shadow
+  @include shadow_all_around(-8px, 9px, 30px, -12px, $dark-grey)
+
+.margin-bottom-25
+  margin-bottom: 25px
+  
+.form-control
+  height: 48px
+  line-height: 1.5
+  text-transform: none
+  border: 2px solid $border-grey
+  @include rounded-corners(5px)
+  padding: 0px 16px
+  margin-bottom: 25px
+
+.img-responsive
+  @include cover
+  box-sizing: content-box
+  height: 200px
+
+.img-responsive-in-cart
+  @include cover
+  box-sizing: content-box
+  height: 50px
+
+.i18n-flag
+  width: 30px
+  height: 17px
+  margin: 5px
+  
+.i18n-container
+  position: absolute
+  z-index: 1000
+
+.jewel-in-cart
+  margin-bottom: 10px

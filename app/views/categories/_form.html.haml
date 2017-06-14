@@ -1,0 +1,11 @@
+= form_for(@category) do |f|
+  .row
+    .col-xs-0.col-sm-1.col-md-3.col-lg-3
+    .col-xs-12.col-sm-10.col-md-6.col-lg-6
+      = f.text_field :name, class: "form-control", placeholder: translate("categories.name")
+
+  .row
+    .col-xs-0.col-sm-1.col-md-3.col-lg-3
+    .col-xs-12.col-sm-10.col-md-6.col-lg-6
+      - button = @category.persisted? ? "Update" : "Save"
+      = f.submit button, class: "btn btn-info"

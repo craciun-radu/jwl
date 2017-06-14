@@ -1,0 +1,18 @@
+.col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding#top-header
+  .col-xs-12.col-sm-12.col-md-5.col-lg-5.no-padding.left-options
+    = render "shared/header/left_options"
+  .col-md-2.col-lg-2.hidden-xs.hidden-sm.center-options.logo-container
+    = render "shared/header/logo"
+  .col-xs-12.col-sm-12.col-md-5.col-lg-5.no-padding.right_options
+    = render "shared/header/right_options"
+  .col-xs-12.col-sm-12.hidden-md.hidden-lg.center-options.logo-container
+    = render "shared/header/logo"
+
+
+  -# - if is_owner?
+  -#   = link_to translate("jewels.add_new"), new_jewel_path(), class: "btn btn-info"
+  -# - elsif is_regular?
+  -#   = link_to translate("account.my_account")
+  -# - else
+  -#   = link_to translate("user.sign_up"), new_user_registration_path()
+  -#   = link_to translate("user.sign_in"), new_user_session_path()

@@ -1,0 +1,51 @@
+en:
+  hello: "Welcome!"
+  confirmation: "Are you sure?"
+  
+  jewels:
+    add_new: "Add Jewels"
+    name: "Jewel Name"
+    category: "Category"
+    price: "Price"
+    description: "Description"
+    
+  account:
+    my_account: "My Account"
+    
+  user:
+    sign_up: "Sign up"
+    sign_in: "Login"
+    sign_up_here: "Signup here"
+    sign_in_here: "Login here"
+    account: "Account"
+    email: "Email"
+    password: "Password"
+    not_signed_in_messsage: "You are not logged in"
+    sign_up_message: "Sign up, it's free"
+    password_confirmation: "Repeat password"
+    already_have_account_message: "Already have an account? Than "
+    create_new_account_message: "Don’t have an account?"
+    welcome_message: "Welcome, "
+    first_name: "First Name"
+    last_name: "Last Name"
+    sign_out_here: "Sign out here"
+    sign_out_message: "Enough shopping for today? "
+    current_password: "Current password"
+    update_account: "Update"
+    edit_account_message: "Edit your account"
+    success_update: "You have successfully update your account"
+    failure_update: "Something went wrong. Please try again."
+  
+  header:
+    home: "Home"
+  
+  shopping_cart:
+    title: "Shopping Cart"
+  
+  favourites_list:
+    title: "Favourites"
+    
+  categories:
+    name: "Category Name"
+    jewels_number: "No. Jewels"
+    actions: "Actions"
