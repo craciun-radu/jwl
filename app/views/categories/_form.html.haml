@@ -7,5 +7,6 @@
   .row
     .col-xs-0.col-sm-1.col-md-3.col-lg-3
     .col-xs-12.col-sm-10.col-md-6.col-lg-6
-      - button = @category.persisted? ? "Update" : "Save"
-      = f.submit button, class: "btn btn-info"
+      - button = @category.persisted? ? translate("update") : translate("save")
+      = f.submit button, class: "btn btn-info blue_button"
+      = link_to translate("categories.list"), categories_path(), class: "btn btn-success float-right purple_button"

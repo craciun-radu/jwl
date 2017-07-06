@@ -1,0 +1,5 @@
+$("#carts-popover #list-of-jewels-in-cart-order").empty()
+$("#carts-popover #list-of-jewels-in-cart-order").attr("id", "second-step-in-order")
+$("#carts-popover .title_of_carts_order").text("#{translate('address.select')}")
+var new_address = $("#{escape_javascript(render(partial: "cart_orders/add_address"))}")
+$("#carts-popover #second-step-in-order").html(new_address)

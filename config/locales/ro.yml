@@ -1,17 +1,12 @@
-ro:
-  hello: "Bine ati venit!"
+ro:    
   confirmation: "Sunteti sigur?"
-  
-  jewels:
-    add_new: "Adaugati bijuterii"
-    name: "Numele Bijuteriei"
-    category: "Categorie"
-    price: "Pret"
-    description: "Descriere"
-
-  account:
-    my_account: "Contul meu"
-    
+  update: "Modifica"
+  save: "Salveaza"
+  delete: "Sterge"
+  edit: "Editeaza"
+  favourite: "Favorite"
+  cart: "Cos"
+  need_sign_in: "Trebuie sa va autentificati pentru a avea acces la cosul de cumparaturi."
   user:
     sign_up: "Creeaza cont"
     sign_in: "Autentificare"
@@ -38,14 +33,42 @@ ro:
     
   header:
     home: "Acasa"
-
+  
   shopping_cart:
     title: "Cos de cumparaturi"
   
   favourites_list:
     title: "Favorite"
-    
+  
+  favourites:
+    empty_list: "Lista de favorite este goala"
+    no_access: "Nu aveti acces la lista de favorite."
+    need_sign_in: "Trebuie sa va autentificati pentru a avea acces la lista de favorite."
+  order:
+    finish: "Finalizare comanda"
+    empty: "Cosul de cumparaturi este gol"
+    no_access: "Nu aveti acces la cosul de cumparaturi"
+    send: "Trimite comanda"
   categories:
     name: "Numele Categoriei"
-    jewels_number: "Nr. bijuterii"
+    jewels_number: "Nr. Bijuterii"
     actions: "Actiuni"
+    list: "Lista de categorii"
+  address:
+    country: "Tara"
+    region: Judet"
+    city: "Oras"
+    street: "Strada"
+    street_number: "Numarul"
+    postal_code: "Cod Postal"
+    floor: "Etaj"
+    apartment: "Apartament"
+    select: "Completati adresa"
+  jewels:
+    available: "Disponibile"
+    name: "Nume"
+    category: "Categorie"
+    price: "Pret"
+    quantity: "Cantitate"
+    description: "Descriere"
+    

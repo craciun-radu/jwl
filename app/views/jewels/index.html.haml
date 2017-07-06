@@ -1,2 +1,3 @@
 - @jewels.each do |jewel|
   = render "show_form", jewel: jewel
+  = render "jewel_modal", jewel_id: jewel.id, jewel: jewel

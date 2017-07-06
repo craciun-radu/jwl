@@ -37,6 +37,7 @@ module ApplicationHelper
   end
 
   def translate(attr)
+    return "" if attr.blank?
     return I18n.t(attr)
   end
   

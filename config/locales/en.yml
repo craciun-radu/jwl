@@ -1,17 +1,12 @@
 en:
-  hello: "Welcome!"
   confirmation: "Are you sure?"
-  
-  jewels:
-    add_new: "Add Jewels"
-    name: "Jewel Name"
-    category: "Category"
-    price: "Price"
-    description: "Description"
-    
-  account:
-    my_account: "My Account"
-    
+  update: "Update"
+  save: "Save"
+  delete: "Delete"
+  edit: "Edit"
+  favourite: "Favourite"
+  cart: "Cart"
+  need_sign_in: "You have to Sign In before viewing your cart."
   user:
     sign_up: "Sign up"
     sign_in: "Login"
@@ -44,8 +39,36 @@ en:
   
   favourites_list:
     title: "Favourites"
-    
+  
+  favourites:
+    empty_list: "Your Favourites list is empty"
+    no_access: "You don't have access to the Favourites list"
+    need_sign_in: "You have to Sign In before viewing your list of favourites."
+  order:
+    finish: "Finish Order"
+    empty: "Your Cart is empty"
+    no_access: "You don't have access to the Cart"
+    send: "Send order"
   categories:
     name: "Category Name"
     jewels_number: "No. Jewels"
     actions: "Actions"
+    list: "List of categories"
+  address:
+    country: "Country"
+    region: "Region"
+    city: "City"
+    street: "Street"
+    street_number: "Street Number"
+    postal_code: "Postal Code"
+    floor: "Floor"
+    apartment: "Apartment"
+    select: "Select address"
+  jewels:
+    available: "Available"
+    name: "Name"
+    category: "Category"
+    price: "Price"
+    quantity: "Quantity"
+    description: "Description"
+    

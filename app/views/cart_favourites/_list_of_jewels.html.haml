@@ -1,0 +1,10 @@
+#list-of-jewels-in-cart-favourites
+  - if defined?(current_user) && current_user.present?
+    - if current_user.owner?
+      %h4.purple_button= translate("favourites.no_access")
+    - else
+      - if @jewels_in_cart_favourite.length == 0
+        %h4= translate("favourites.empty_list")
+      - else
+        - @jewels_in_cart_favourite.each do |jewel_id, jewel|
+          = render "cart_favourites/jewel_in_cart", jewel_id: jewel_id, jewel: jewel

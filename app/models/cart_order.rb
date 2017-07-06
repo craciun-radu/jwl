@@ -1,4 +1,5 @@
 class CartOrder < ApplicationRecord
+  # status: active || sent
   belongs_to :user
   has_many :cart_order_jewels
   has_many :jewels, through: :cart_order_jewels

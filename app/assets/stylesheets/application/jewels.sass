@@ -1,10 +1,159 @@
 body.jewels
   .jewel-container
-    height: 300px
+    height: 450px
     padding: 20px 15px
   .jewel
-    border: 1px solid $dark-grey
     height: 100%
-    background-color: white
+    padding: 10px
+    background-color: #33244C
+    border-radius: 10px
+    opacity: 0.85
+    .purple_button
+      float: left
+    .jw-image
+      background-color: #33244C
+    .jw-name-container
+      width: 100%
+      text-align: center
     .jw-name
-      
+      padding-top: 6px
+      a
+        font-size: 21px
+        color: #ff434a
+        &:hover
+          text-decoration: none
+          color: #ff0008
+    .jw-category
+      font-size: 17px
+      color: #a3b3f0
+    .jw-actions
+      position: absolute
+      bottom: 30px
+      font-size: 17px
+      width: 85%
+    .jw-description
+      color: #838383
+      text-align: justify
+      padding: 2px 5px
+    
+  .jewel-modal
+    .modal-xl
+      width: 65% !important
+    .modal-header
+      border-bottom: 1px solid #a3b3f0
+    .modal-body
+      display: flex
+    .modal-content
+      background-color: #33244C 
+      opacity: 0.88
+    .jw-image
+      background-color: #33244C
+    button.close
+      color: white
+    h4.modal-title
+      font-size: 26px
+      color: #ff434a
+      &:hover
+        color: #ff0008
+        i
+      i
+        color: #a3b3f0
+        animation-name: rotate
+        animation-duration: 2s
+        animation-iteration-count: infinite
+        animation-timing-function: linear
+    .jewel-category
+      color: #a3b3f0
+    .jewel-description
+      color: white
+      text-align: justify
+      line-height: 150%
+    .jewel-price-container
+      text-align: right
+      color: #ff434a
+@keyframes rotate
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+body.cart_orders
+  .jewel-container
+    height: 230px
+    padding: 20px 15px
+  .jewel
+    height: 100%
+    padding: 10px
+    background-color: #33244C
+    border-radius: 10px
+    opacity: 0.85
+    .purple_button
+      float: left
+    .jw-image
+      background-color: #33244C
+      height: 90px
+    .jw-name-container
+      width: 100%
+      text-align: center
+    .jw-name
+      padding-top: 6px
+      a
+        font-size: 19px
+        color: #ff434a
+        &:hover
+          text-decoration: none
+          color: #ff0008
+    .jw-category
+      font-size: 17px
+      color: #a3b3f0
+    .jw-actions
+      position: absolute
+      bottom: 30px
+      font-size: 17px
+      width: 85%
+    .jw-description
+      color: #838383
+      text-align: justify
+      padding: 2px 5px
+    
+  .jewel-modal
+    .modal-xl
+      width: 65% !important
+    .modal-header
+      border-bottom: 1px solid #a3b3f0
+    .modal-body
+      display: flex
+    .modal-content
+      background-color: #33244C 
+      opacity: 0.88
+    .jw-image
+      background-color: #33244C
+    button.close
+      color: white
+    h4.modal-title
+      font-size: 26px
+      color: #ff434a
+      &:hover
+        color: #ff0008
+        i
+      i
+        color: #a3b3f0
+        animation-name: rotate
+        animation-duration: 2s
+        animation-iteration-count: infinite
+        animation-timing-function: linear
+    .jewel-category
+      color: #a3b3f0
+    .jewel-description
+      color: white
+      text-align: justify
+      line-height: 150%
+    .jewel-price-container
+      text-align: right
+      color: #ff434a
+@keyframes rotate
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+  

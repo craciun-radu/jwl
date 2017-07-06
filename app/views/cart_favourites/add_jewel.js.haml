@@ -1,0 +1,4 @@
+- if !@existent
+  var new_cart_item = $("#{escape_javascript(render(partial: "cart_favourites/jewel_in_cart", locals: {jewel: @jewel_in_cart_favourite, jewel_id: @jewel.id}))}");
+  $("#list-of-jewels-in-cart-favourites h4").empty()
+  $("#list-of-jewels-in-cart-favourites").append(new_cart_item)

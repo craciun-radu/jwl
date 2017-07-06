@@ -1,0 +1,13 @@
+.row.jewel-in-cart{class: "jewel-in-favourite-#{jewel_id}"}
+  .col-xs-3.col-sm-3.col-md-3.col-lg-4
+    .jw-image.img-responsive-in-cart{style: "background-image: url('#{jewel['image_url']}');"}
+  .col-xs-3.col-sm-3.col-md-3.col-lg-4
+    = jewel['name']
+  .col-xs-3.col-sm-3.col-md-3.col-lg-4
+    %span.purple_button.small_button.changed_padding
+      = link_to remove_jewel_from_cart_favourite_path(cart_favourite_id: @cart_favourite.id, jewel_id: jewel_id), remote: true do
+        %i.fa.fa-trash-o
+        
+    %span.red_button.small_button
+      = link_to add_jewel_to_cart_order_path(cart_order_id: @cart_order.id, jewel_id: jewel_id), remote: true do
+        %i.fa.fa-opencart

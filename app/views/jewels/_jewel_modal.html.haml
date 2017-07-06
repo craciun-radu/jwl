@@ -1,0 +1,21 @@
+.modal.fade.jewel-modal{id: "jewel-modal-#{jewel_id}"}
+  .modal-dialog.modal-xl
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+        %h4.modal-title
+          %i.fa.fa-connectdevelop
+          %span= "#{jewel.name}"
+      .modal-body
+        .col-xs-12.col-sm-12.col-md-6.col-lg-6
+          .jw-image.img-responsive.img-larger{style: "background-image: url('#{jewel.image_url}');"}
+        .col-xs-12.col-sm-12.col-md-6.col-lg-6
+          .row
+            .col-xs-12.col-sm-12.col-md-6.col-lg-6
+              %h3.jewel-category= "#{jewel.category.name}"
+            .col-xs-12.col-sm-12.col-md-6.col-lg-6.jewel-price-container
+              %h3.jewel-price= "#{jewel.price} RON"
+          .row
+            .col-xs-12.col-sm-12.col-md-12.col-lg-12
+              %h5.jewel-description
+                = jewel.description

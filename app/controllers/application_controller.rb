@@ -2,11 +2,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_locale
-  before_action :load_cart_order
-  before_action :load_cart_favourite
-  before_action :load_list_of_jewels_in_cart_order
+  before_action :load_cart_order, :load_cart_favourite
+  before_action :load_list_of_jewels_in_cart_order, :load_list_of_jewels_in_cart_favourites
   
   def translate(attr)
+    return "" if attr.blank?
     return I18n.t(attr)
   end
 
@@ -43,8 +43,21 @@ class ApplicationController < ActionController::Base
        jew = coj.jewel
        @jewels_in_cart_order[coj.jewel_id] = {}
        @jewels_in_cart_order[coj.jewel_id]['name'] = jew.name
+       @jewels_in_cart_order[coj.jewel_id]['price'] = jew.price
        @jewels_in_cart_order[coj.jewel_id]['image_url'] = jew.image_url
        @jewels_in_cart_order[coj.jewel_id]['quantity'] = coj.quantity
+     end
+   end
+
+   def load_list_of_jewels_in_cart_favourites
+     return if current_user.blank?
+     cart_favourite_jewels = @cart_favourite.cart_favourite_jewels
+     @jewels_in_cart_favourite = {}
+     cart_favourite_jewels.each do |coj|
+       jew = coj.jewel
+       @jewels_in_cart_favourite[coj.jewel_id] = {}
+       @jewels_in_cart_favourite[coj.jewel_id]['name'] = jew.name
+       @jewels_in_cart_favourite[coj.jewel_id]['image_url'] = jew.image_url
      end
    end
 end

@@ -1,2 +1,6 @@
-= link_to root_path, class: "logo" do
+- if current_user.present?
+  - link = jewels_path
+- else
+  - link = root_path
+= link_to link, class: "logo" do
   = image_tag "logo.png"

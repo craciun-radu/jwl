@@ -1,2 +1,4 @@
+- if @empty_cart
+  $("#list-of-jewels-in-cart-order .cart_empty_message").text("#{translate('order.empty')}");
 $(".jewel-in-cart-#{@jewel.id}").hide("slide");
 $(".jewel-in-cart-#{@jewel.id}").remove(1500);

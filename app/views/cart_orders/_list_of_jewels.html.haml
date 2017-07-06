@@ -1,3 +1,12 @@
 #list-of-jewels-in-cart-order
-  - @jewels_in_cart_order.each do |jewel_id, jewel|
-    = render "cart_orders/jewel_in_cart", jewel_id: jewel_id, jewel: jewel
+  - if defined?(current_user) && current_user.present?
+    - if current_user.owner?
+      %h4.purple_button= translate("order.no_access")
+    - else
+      %h4.cart_empty_message{class: @jewels_in_cart_order.length == 0 ? "" : "hidden"}= translate("order.empty")
+      - if @jewels_in_cart_order.length > 0
+        - @jewels_in_cart_order.each do |jewel_id, jewel|
+          = render "cart_orders/jewel_in_cart", jewel_id: jewel_id, jewel: jewel
+      .pull-right.finish-order-button.red_button{class: @jewels_in_cart_order.length > 0 ? "" : "hidden"}
+        = link_to cart_order_path(@cart_order.id), remote: true do
+          = translate("order.finish")

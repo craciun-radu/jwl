@@ -1,0 +1,18 @@
+- @cart_orders.each do |cart_order|
+  - next if cart_order.jewels.blank?
+  - cart_order.jewels.each do |jewel|
+    = render "jewels/jewel_modal", jewel_id: jewel.id, jewel: jewel
+    - quantity = cart_order.cart_order_jewels.where(jewel_id: jewel.id).first.quantity
+    .col-xs-6.col-sm-3.col-md-2.col-lg-2.jewel-container{class: "jewel-container-#{jewel.id}"}
+      .jewel
+        .jw-image.img-responsive{style: "background-image: url('#{jewel.image_url}');"}
+        %span.jw-name-container
+          .jw-name
+            %span.open_in_popup_button
+              = link_to "#", data: {toggle: "modal", target: "#jewel-modal-#{jewel.id}"} do
+                %i.fa.fa-external-link
+                = jewel.name
+          .jw-category
+            %span= "#{quantity} x #{jewel.price} RON"
+            
+  .col-xs-12.col-sm-12.col-md-12.col-lg-12{style: "height: 30px"}

@@ -1,14 +1,23 @@
 .row.jewel-in-cart{class: "jewel-in-cart-#{jewel_id}"}
-  .col-xs-3.col-sm-3.col-md-3.col-lg-3
+  .col-xs-3.col-sm-3.col-md-3.col-lg-2
     .jw-image.img-responsive-in-cart{style: "background-image: url('#{jewel['image_url']}');"}
-  .col-xs-3.col-sm-3.col-md-3.col-lg-3
+  .col-xs-3.col-sm-3.col-md-3.col-lg-3.extra-padding-top
     = jewel['name']
-  .col-xs-3.col-sm-3.col-md-3.col-lg-3.quantity-container
-    = jewel['quantity']
-  .col-xs-3.col-sm-3.col-md-3.col-lg-3
+  .col-xs-1.col-sm-1.col-md-1.col-lg-2.extra-padding-top{style: ""}
     %span
+      = "x"
+    %span.quantity-container
+      = jewel['quantity']
+  .col-xs-2.col-sm-2.col-md-2.col-lg-2.extra-padding-top
+    %span.price-container
+      = jewel['price'] * jewel['quantity']
+    %span
+      = "RON"
+  .col-xs-3.col-sm-3.col-md-3.col-lg-3.extra-padding-top
+    %span.purple_button.small_button.changed_padding
       = link_to remove_jewel_from_cart_order_path(cart_order_id: @cart_order.id, jewel_id: jewel_id), remote: true do
-        %i.fa.fa-trash
-    %span
+        %i.fa.fa-trash-o
+        
+    %span.red_button.small_button
       = link_to add_jewel_to_cart_order_path(cart_order_id: @cart_order.id, jewel_id: jewel_id), remote: true do
         %i.fa.fa-plus

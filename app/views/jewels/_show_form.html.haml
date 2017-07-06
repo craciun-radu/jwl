@@ -1,26 +1,41 @@
-.col-xs-12.col-sm-6.col-md-4.col-lg-3.jewel-container{class: "jewel-container-#{jewel.id}"}
+.col-xs-12.col-sm-6.col-md-4.col-lg-4.jewel-container{class: "jewel-container-#{jewel.id}"}
   .jewel
     .jw-image.img-responsive{style: "background-image: url('#{jewel.image_url}');"}
-    %span
+    %span.jw-name-container
       .jw-name
-        = jewel.name
-    %span
+        %span.open_in_popup_button
+          = link_to "#", data: {toggle: "modal", target: "#jewel-modal-#{jewel.id}"} do
+            %i.fa.fa-external-link
+            = jewel.name
+          
       .jw-category
         = jewel.category_name
-    .jw.actions
+        %div
+          = "#{jewel.quantity} #{translate('jewels.available')}"
+    .jw-description
+      = jewel.description.truncate(80, omission: '...')
+    .jw-actions
       - if current_user.present?
         - if current_user.owner?
-          %span
+          %span.purple_button
             = link_to jewel_path(jewel.id), method: :delete, data: {confirm: translate("confirmation")} do
               %i.fa.fa-trash
-          %span
+              = translate("delete")
+              
+          %span.pull-right.red_button
             = link_to edit_jewel_path(jewel.id) do
               %i.fa.fa-pencil
-        - else
-          %span.add_to_favourites
-            = link_to add_jewel_to_cart_favourite_path(cart_favourite_id: @cart_favourite.id, jewel_id: jewel.id), remote: true do
-              %i.fa.fa-star
+              = translate("edit")
               
-          %span.add_to_cart_order
-            = link_to add_jewel_to_cart_order_path(cart_order_id: @cart_order.id, jewel_id: jewel.id), remote: true do
-              %i.fa.fa-shopping-basket
+        - else
+          - disabled_class = jewel.quantity == 0 ? "disabled" : ""
+          %span.add_to_favourites.purple_button{class: disabled_class}
+            = link_to add_jewel_to_cart_favourite_path(cart_favourite_id: @cart_favourite.id, jewel_id: jewel.id), remote: true, class: disabled_class do
+              %i.fa.fa-heart-o
+              = translate("favourite")
+              
+          %span.add_to_cart_order.pull-right.red_button{class: disabled_class}
+            = link_to add_jewel_to_cart_order_path(cart_order_id: @cart_order.id, jewel_id: jewel.id), remote: true, class: disabled_class do
+              -# %i.fa.fa-shopping-basket
+              %i.fa.fa-opencart
+              = translate("cart")

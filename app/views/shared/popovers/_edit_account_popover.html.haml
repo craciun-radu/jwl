@@ -26,10 +26,6 @@
           .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
             = f.password_field :password_confirmation, autocomplete: "off", placeholder: translate("user.password_confirmation"), class: "form-control"
 
-        -# .col-xs-12.col-sm-12.col-md-12.col-lg-12.no-padding
-        -#   .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding
-        -#     = f.password_field :current_password, autocomplete: "off", placeholder: translate("user.current_password"), class: "form-control"
-
         .col-xs-12.col-sm-12.col-md-9.col-lg-9.no-padding.margin-bottom-25
           .actions.pull-right
             = f.submit translate("user.update_account").upcase(), class: "btn btn-info sign-in-button"

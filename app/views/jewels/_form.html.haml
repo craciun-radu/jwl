@@ -1,3 +1,4 @@
+
 = form_for(@jewel, html: {multipart: true}) do |f|
   .row
     .col-xs-0.col-sm-1.col-md-3.col-lg-3
@@ -17,15 +18,20 @@
   .row
     .col-xs-0.col-sm-1.col-md-3.col-lg-3
     .col-xs-12.col-sm-10.col-md-6.col-lg-6
-      = f.text_field :description, class: "form-control", placeholder: translate("jewels.description")
+      = f.number_field :quantity, step: 1, class: "form-control", placeholder: translate("jewels.quantity")
+
+  .row
+    .col-xs-0.col-sm-1.col-md-3.col-lg-3
+    .col-xs-12.col-sm-10.col-md-6.col-lg-6
+      = f.text_area :description, class: "form-control", placeholder: translate("jewels.description")
       
   .row
     .col-xs-0.col-sm-1.col-md-3.col-lg-3
     .col-xs-12.col-sm-10.col-md-6.col-lg-6
       = f.file_field :image
       
-  .row
+  .row{style: "margin-top: 30px"}
     .col-xs-0.col-sm-1.col-md-3.col-lg-3
     .col-xs-12.col-sm-10.col-md-6.col-lg-6
-      - button = @jewel.persisted? ? "Update" : "Save"
-      = f.submit button, class: "btn btn-info"
+      - button = @jewel.persisted? ? translate("update") : translate("save")
+      = f.submit button, class: "btn btn-info blue_button"
